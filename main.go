@@ -58,7 +58,7 @@ func serve(c *fiber.Ctx) error {
 	} else if randWater >= 6 && randWater <= 8 {
 		statWater = "Siaga"
 		colorWater = "#FFE45E"
-	} else if randWater >= 8 {
+	} else if randWater > 8 {
 		statWater = "Bahaya"
 		colorWater = "#F2555E"
 	}
@@ -69,7 +69,7 @@ func serve(c *fiber.Ctx) error {
 	} else if randWind >= 7 && randWind <= 15 {
 		statWind = "Siaga"
 		colorWind = "#FFE45E"
-	} else if randWind >= 15 {
+	} else if randWind > 15 {
 		statWind = "Bahaya"
 		colorWind = "#F2555E"
 	}
