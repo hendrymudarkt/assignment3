@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(238, 237, 237, 0.33);
+            color: rgb(105, 104, 104);
+            font-family: sans-serif;
+        }
+
+        .container {
+            height: 80vh;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            align-items: center;
+            border-radius: 1rem;
+            vertical-align: middle;
+        }
+
+        @media(max-width:767px) {
+            .container {
+                height: fit-content;
+            }
+        }
+
+        .weather {
+            width: 77%;
+        }
+
+        @media(max-width:767px) {
+            .weather {
+                width: 100%;
+            }
+        }
+
+        .card {
+            padding: 1rem;
+            margin: 1.5rem 4vw;
+            border-radius: 1rem;
+            background-color: rgba(238, 237, 237, 0.22);
+            border-color: rgba(238, 237, 237, 0.22);
+            box-shadow: 5px 6px 6px 2px #e9ecef;
+            text-align: center;
+        }
+
+        @media(max-width:768px) {
+            .card {
+                margin: 1.5rem;
+            }
+        }
+
+        .title {
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%)
+        }
+
+        .title p {
+            margin-bottom: 0.2rem;
+            font-size: 1.2rem;
+        }
+
+        .temp {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .header {
+            color: #dddddd;
+        }
+
+        .col-4 {
+            padding: 0 0.2rem;
+        }
+
+        .icon {
+            align-self: flex-end;
+            margin-right: -2.5rem;
+            margin-top: -2rem;
+            z-index: 999;
+        }
+
+        .icon img {
+            width: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center">
+        <div class="weather">
+            <div class="row">
+                <div class="col-md-6">
+                    <v class="card">
+                        <span class="icon"><img
+                                src="https://img.icons8.com/color/48/000000/water.png" /></span>
+                        <div class="title">
+                            <p>Water</p>
+                        </div>
+                        <div class="temp"><font color="{{.colorWater}}">{{.Water}}</font></div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="header">Status</div>
+                                <div class="value">{{.statWater}}</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="header">Satuan</div>
+                                <div class="value">m</div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <span class="icon"><img src="https://img.icons8.com/color/50/000000/wind.png" /></span>
+                        <div class="title">
+                            <p>Wind</p>
+                        </div>
+                        <div class="temp"><font color="{{.colorWind}}">{{.Wind}}</font></div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="header">Status</div>
+                                <div class="value">{{.statWind}}</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="header">Satuan</div>
+                                <div class="value">m/s</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                location.reload(true);
+            }, 15000);
+        });
+    </script>
+</body>
+
+</html>
